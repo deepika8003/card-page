@@ -135,6 +135,11 @@ body {
         gap: 10px;
     }
 
+    .card-footer div {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .card-footer button {
         width: 100%;
         padding: 10px;

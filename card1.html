@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest Jobs</title>
+  <link rel="stylesheet" href="cards.css">
+</head>
+<body>
+ <div class="head">
+        <h1>Latest Opportunities</h1>
+         <p class="subtitle">Find your next dream job from top companies</p>
+
+    </div>
+
+  <div class="container" id="cardContainer"></div>
+
+  <script>
+    const jobs = [
+      {
+        company: "Amazon",
+        logo: "image/amazon.png",
+        role: "Senior UI/UX Designer",
+        type: ["Part-Time", "Senior Level"],
+        salary: "$120/hr",
+        location: "Mumbai, India"
+      },
+      {
+        company: "Google",
+        logo: "image/google.jpg",
+        role: "Graphic Designer",
+        type: ["Part-Time", "Flexible Schedule"],
+        salary: "$150-220k",
+        location: "Kochi, India"
+      },
+      {
+        company: "Dribbble",
+        logo: "image/dribbble.webp",
+        role: "Senior Motion Designer",
+        type: ["Contract", "Remote"],
+        salary: "$85/hr",
+        location: "Chennai, India"
+      },
+      {
+        company: "Figma",
+        logo: "image/figma.jpg",
+        role: "UX Designer",
+        type: ["Full-Time", "In Office"],
+        salary: "$200-250k",
+        location: "Bangalore, India"
+      },
+       {
+        company: "Airbnb",
+        logo: "image/airbnb.png",
+        role: "Junior UI/UX Designer",
+        type: ["Contract", "remote"],
+        salary: "$100/hr",
+        location: "Delhi, India"
+      },
+      {
+        company: "Apple",
+        logo: "image/apple.jpg",
+        role: "Graphic Designer",
+        type: ["Full-Time", "Flexible Schedule"],
+        salary: "$85-120k",
+        location: "Kerala, India"
+      },
+    ];
+
+    const container = document.getElementById("cardContainer");
+
+    container.innerHTML = jobs.map(job => `
+      <div class="card">
+        <div class="card-head">
+          <div class="logo">
+            <img src="${job.logo}" alt="${job.company}">
+          </div>
+           <button>Save  <i class="fa-regular fa-bookmark"></i></button>
+        </div>
+
+        <div class="card-body">
+          <p class="company">
+            ${job.company}
+            <span style="color:#c5c8cd; font-size:14px;">5 days ago</span>
+          </p>
+          <h3>${job.role}</h3>
+
+          <div class="tags">
+            ${job.type.map(tag => `<span>${tag}</span>`).join("")}
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div>
+            <h3>${job.salary}</h3>
+            <p>${job.location}</p>
+          </div>
+          <button>Apply now</button>
+        </div>
+      </div>
+    `).join("");
+  </script>
+
+</body>
+</html>
